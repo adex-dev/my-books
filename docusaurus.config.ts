@@ -50,8 +50,8 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://adex-dev.github.io/my-books/my-books',
-  baseUrl: '/',
+  url: 'https://adex-dev.github.io',
+  baseUrl: '/my-books/',
 
   organizationName: 'adex-dev',
   projectName: 'my-books',
