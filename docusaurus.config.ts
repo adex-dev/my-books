@@ -50,7 +50,7 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://adex-dev.github.io/my-books',
+  url: 'https://adex-dev.github.io',
   baseUrl: '/',
 
   organizationName: 'adex-dev',
@@ -117,10 +117,10 @@ const config: Config = {
           links: [ ],
           copyright: `${new Date().getFullYear()} | Maintained by Akmad Nudin`,
         },
-        prism: {
-          theme: lightCodeTheme,
-          darkTheme: darkCodeTheme,
-        },
+        // prism: {
+        //   theme: lightCodeTheme,
+        //   darkTheme: darkCodeTheme,
+        // },
         prism: {
           theme: prismThemes.github,
           darkTheme: prismThemes.dracula,
