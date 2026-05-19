@@ -45,7 +45,7 @@ export default function HomepageFeatures(): ReactNode {
             </Link>
 
             <Link
-              to="/docs/python/dasar"
+              to="/docs/python/intro"
               style={{
                 padding: '2rem',
                 border: '1px solid #ddd',
