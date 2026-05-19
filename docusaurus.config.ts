@@ -51,7 +51,7 @@ const config: Config = {
   },
 
   url: 'https://adex-dev.github.io',
-  baseUrl: '/my-books/',
+  baseUrl: '/my-books/my-books/',
 
   organizationName: 'adex-dev',
   projectName: 'my-books',
