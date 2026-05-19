@@ -1,17 +1,15 @@
-import { themes as prismThemes } from 'prism-react-renderer';
-import type { Config } from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
 
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
 
-const docsDir = path.join(process.cwd(), 'docs');
+const docsDir = path.join(process.cwd(), "docs");
 
 const folders = fs
   .readdirSync(docsDir)
-  .filter((file) =>
-    fs.statSync(path.join(docsDir, file)).isDirectory()
-  );
+  .filter((file) => fs.statSync(path.join(docsDir, file)).isDirectory());
 
 // const dynamicDocsPlugins = folders.map((dir) => [
 //   '@docusaurus/plugin-content-docs',
@@ -24,54 +22,52 @@ const folders = fs
 //   },
 // ]);
 
-
 const navbarItems = folders.map((dir) => {
   const files = fs
     .readdirSync(path.join(docsDir, dir))
-    .filter((file) => file.endsWith('.md'));
+    .filter((file) => file.endsWith(".md"));
 
-  const firstDoc = files[0]?.replace('.md', '');
+  const firstDoc = files[0]?.replace(".md", "");
 
   return {
     to: `/docs/${dir}/${firstDoc}`,
     label: dir.charAt(0).toUpperCase() + dir.slice(1),
-    position: 'left' as const,
+    position: "left" as const,
   };
 });
 
-
 const config: Config = {
-  title: 'My Books',
-  tagline: 'Modern documentation',
+  title: "My Books",
+  tagline: "Modern documentation",
 
-  favicon: 'img/favicon.ico',
+  favicon: "img/favicon.ico",
 
   future: {
     v4: true,
   },
 
-   url: 'https://adex-dev.github.io',
-  baseUrl: '/my-books/',
-  organizationName: 'adex-dev',
-  projectName: 'my-books',
+  url: "https://adex-dev.github.io",
+  baseUrl: "/my-books/",
+  organizationName: "adex-dev",
+  projectName: "my-books",
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: "throw",
 
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          path: 'docs',
+          path: "docs",
 
-          routeBasePath: 'docs',
+          routeBasePath: "docs",
 
-          sidebarPath: './sidebars.ts',
+          sidebarPath: "./sidebars.ts",
         },
 
         blog: {
@@ -79,52 +75,76 @@ const config: Config = {
         },
 
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
     ],
   ],
 
-  // plugins: dynamicDocsPlugins,
+  plugins: [],
+  headTags: [
+    {
+      tagName: "meta",
+      attributes: {
+        name: "robots",
+        content: "noindex, nofollow, noarchive, nosnippet",
+      },
+    },
+    {
+      tagName: "meta",
+      attributes: {
+        name: "googlebot",
+        content: "noindex, nofollow, noarchive, nosnippet",
+      },
+    },
+  ],
 
   themeConfig: {
-    image: 'img/docusaurus-social-card.jpg',
+    image: "img/docusaurus-social-card.jpg",
 
-     colorMode: {
-    defaultMode: 'light',
-    disableSwitch: true,
-    respectPrefersColorScheme: false,
-  },
+    colorMode: {
+      defaultMode: "light",
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
     navbar: {
-      title: 'My Books',
+      title: "My Books",
 
       logo: {
         alt: `My Books - Modern documentation`,
-        src: 'img/logo.svg',
+        src: "img/logo.svg",
       },
 
       items: [
-       ...navbarItems, 
+        ...navbarItems,
         {
-          href: 'https://github.com/adex-dev/my-books',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/adex-dev/my-books",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
-      footer: {
-          style: 'dark',
-          links: [ ],
-          copyright: `${new Date().getFullYear()} | Maintained by Akmad Nudin`,
-        },
-        // prism: {
-        //   theme: lightCodeTheme,
-        //   darkTheme: darkCodeTheme,
-        // },
-        prism: {
-          theme: prismThemes.github,
-          darkTheme: prismThemes.dracula,
-          additionalLanguages: ['bash', 'rust', 'python', 'toml', 'yaml', 'log', 'hcl'],
+    footer: {
+      style: "dark",
+      links: [],
+      copyright: `${new Date().getFullYear()} | Maintained by Akmad Nudin`,
+    },
+    // prism: {
+    //   theme: lightCodeTheme,
+    //   darkTheme: darkCodeTheme,
+    // },
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
+      additionalLanguages: [
+        "bash",
+        "rust",
+        "python",
+        "toml",
+        "yaml",
+        "log",
+        "hcl",
+      ],
     },
   } satisfies Preset.ThemeConfig,
 };
