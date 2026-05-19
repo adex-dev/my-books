@@ -50,7 +50,7 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'http://localhost',
+  url: 'https://adex-dev.github.io/my-books',
   baseUrl: '/',
 
   organizationName: 'adex-dev',
@@ -120,12 +120,12 @@ const config: Config = {
         prism: {
           theme: lightCodeTheme,
           darkTheme: darkCodeTheme,
-          additionalLanguages: ['bash', 'rust', 'python', 'toml', 'yaml', 'log', 'hcl'],
         },
-    // prism: {
-    //   theme: prismThemes.github,
-    //   darkTheme: prismThemes.dracula,
-    // },
+        prism: {
+          theme: prismThemes.github,
+          darkTheme: prismThemes.dracula,
+          additionalLanguages: ['bash', 'rust', 'python', 'toml', 'yaml', 'log', 'hcl'],
+    },
   } satisfies Preset.ThemeConfig,
 };
 
