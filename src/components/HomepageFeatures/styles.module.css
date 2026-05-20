@@ -9,3 +9,8 @@
   height: 200px;
   width: 200px;
 }
+.box {
+  position: relative;
+  padding: "2rem";
+  border-radius: "16px";
+}

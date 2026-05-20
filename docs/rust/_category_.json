@@ -3,6 +3,7 @@
   "position": 1,
   "link": {
     "type": "generated-index",
-    "title": "Rust Documentation"
+    "title": "Rust Documentation",
+    "description": "Catatan dan dokumentasi backend development menggunakan Rust."
   }
 }

@@ -1,0 +1,88 @@
+---
+title: Intro Sql
+description: Pengenalan dasar SQL untuk memahami database dan query.
+---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<center>
+<img
+   src={useBaseUrl('/img/sql.svg')}
+  alt="Rust Logo"
+  style={{ width: '100px', height: '100px' }}
+/>
+</center>
+
+
+# Intro SQL
+
+SQL (*Structured Query Language*) adalah bahasa standar yang digunakan untuk mengelola dan memanipulasi database relasional. Dengan SQL, kita dapat melakukan berbagai operasi seperti membaca data, menambahkan data, memperbarui data, hingga menghapus data dari database.
+
+## Kenapa Belajar SQL?
+
+SQL digunakan hampir di semua sistem modern seperti:
+
+- Aplikasi kasir (POS)
+- Sistem perbankan
+- Marketplace
+- Dashboard analytics
+- Backend API
+- Sistem inventory dan gudang
+
+Memahami SQL merupakan fondasi penting bagi developer backend, data analyst, maupun software engineer.
+
+## Fungsi Utama SQL
+
+Beberapa fungsi utama SQL antara lain:
+
+| Perintah | Fungsi |
+|---|---|
+| `SELECT` | Mengambil data |
+| `INSERT` | Menambahkan data |
+| `UPDATE` | Mengubah data |
+| `DELETE` | Menghapus data |
+| `CREATE` | Membuat table/database |
+| `ALTER` | Mengubah struktur table |
+| `DROP` | Menghapus table/database |
+
+## Contoh Query SQL
+
+### Mengambil Data
+
+```sql
+SELECT * FROM users;
+```
+
+### Menambahkan Data
+
+```sql
+INSERT INTO users (name, email) VALUES ('Akmad', 'akmad@mail.com');
+```
+
+### Mengupdate Data
+
+```sql
+UPDATE users SET name = 'Nudin' WHERE id = 1;
+```
+
+### Menghapus Data
+```sql
+DELETE FROM users WHERE id = 1;
+```
+
+### Struktur Database Relasional
+
+#### Database relasional terdiri dari beberapa komponen:
+
+Database → Tempat penyimpanan utama
+
+- Table → Kumpulan data
+- Row → Data per baris
+- Column → Struktur field data
+- Primary Key → Identitas unik data
+- Foreign Key → Relasi antar table
+
+### Kesimpulan
+
+SQL adalah skill dasar yang wajib dipahami dalam pengembangan aplikasi modern. Dengan memahami SQL, kita dapat mengelola data secara efisien, cepat, dan terstruktur.
+
+Catatan lainnya akan dibuat pada tiap module sesuai dengan task yang dibutuhkan pada lingkungan kerja.

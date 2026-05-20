@@ -11,23 +11,12 @@ const folders = fs
   .readdirSync(docsDir)
   .filter((file) => fs.statSync(path.join(docsDir, file)).isDirectory());
 
-// const dynamicDocsPlugins = folders.map((dir) => [
-//   '@docusaurus/plugin-content-docs',
-//   {
-//     id: dir,
-//     path: `docs/${dir}`,
-//     routeBasePath: dir,
-//       sidebarPath: undefined,
-//       includeCurrentVersion: true,
-//   },
-// ]);
-
 const navbarItems = folders.map((dir) => {
   const files = fs
     .readdirSync(path.join(docsDir, dir))
-    .filter((file) => file.endsWith(".md"));
+    .filter((file) => /\.(md|mdx)$/.test(file));
 
-  const firstDoc = files[0]?.replace(".md", "");
+  const firstDoc = files[0]?.replace(/\.(md|mdx)$/, "");
 
   return {
     to: `/docs/${dir}/${firstDoc}`,
@@ -39,8 +28,7 @@ const navbarItems = folders.map((dir) => {
 const config: Config = {
   title: "My Books",
   tagline: "Modern documentation",
-
-  favicon: "img/favicon.ico",
+  favicon: "img/logo.svg",
 
   future: {
     v4: true,
@@ -98,13 +86,11 @@ const config: Config = {
       },
     },
   ],
-
   themeConfig: {
     image: "img/docusaurus-social-card.jpg",
-
     colorMode: {
       defaultMode: "light",
-      disableSwitch: true,
+      disableSwitch: false,
       respectPrefersColorScheme: false,
     },
     navbar: {
