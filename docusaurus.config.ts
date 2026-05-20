@@ -14,7 +14,7 @@ const folders = fs
 const navbarItems = folders.map((dir) => {
   const files = fs
     .readdirSync(path.join(docsDir, dir))
-    .filter((file) => /\.(md|mdx)$/.test(file));
+    .filter((file) => /\.(md|mdx)$/.test(file)).sort();
 
   const firstDoc = files[0]?.replace(/\.(md|mdx)$/, "");
 
