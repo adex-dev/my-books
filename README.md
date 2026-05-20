@@ -118,3 +118,8 @@ bun run start
 atau
 bunx docusourus start
 ```
+
+### Menjalankan translation
+
+```npm
+bunx docusaurus write-translations --locale id

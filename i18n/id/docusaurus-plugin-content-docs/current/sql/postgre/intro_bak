@@ -1,0 +1,22 @@
+<!-- import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Query SQL
+
+<Tabs>
+  <TabItem value="mysql" label="MySQL">
+
+```sql
+SELECT * FROM users;
+```
+
+  </TabItem>
+
+  <TabItem value="postgres" label="PostgreSQL">
+
+```sql
+SELECT id, name FROM users;
+```
+
+  </TabItem>
+</Tabs> -->

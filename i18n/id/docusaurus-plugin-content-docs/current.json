@@ -1,0 +1,30 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.chiperlab": {
+    "message": "chiperlab",
+    "description": "The label for category 'chiperlab' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.python": {
+    "message": "python",
+    "description": "The label for category 'python' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.rust": {
+    "message": "rust",
+    "description": "The label for category 'rust' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.axum": {
+    "message": "axum",
+    "description": "The label for category 'axum' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.sql": {
+    "message": "sql",
+    "description": "The label for category 'sql' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.postgre": {
+    "message": "postgre",
+    "description": "The label for category 'postgre' in sidebar 'tutorialSidebar'"
+  }
+}

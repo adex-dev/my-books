@@ -11,19 +11,26 @@ const folders = fs
   .readdirSync(docsDir)
   .filter((file) => fs.statSync(path.join(docsDir, file)).isDirectory());
 
-const navbarItems = folders.map((dir) => {
-  const files = fs
-    .readdirSync(path.join(docsDir, dir))
-    .filter((file) => /\.(md|mdx)$/.test(file)).sort();
+const navbarItems = folders
+  .map((dir) => {
+    const dirPath = path.join(docsDir, dir);
 
-  const firstDoc = files[0]?.replace(/\.(md|mdx)$/, "");
+    const files = fs
+      .readdirSync(dirPath)
+      .filter((file) => /\.(md|mdx)$/.test(file))
+      .sort();
 
-  return {
-    to: `/docs/${dir}/${firstDoc}`,
-    label: dir.charAt(0).toUpperCase() + dir.slice(1),
-    position: "left" as const,
-  };
-});
+    if (files.length === 0) return null;
+
+    const firstDoc = files[0].replace(/\.(md|mdx)$/, "");
+
+    return {
+      to: `/docs/${dir}/${firstDoc}`,
+      label: dir.charAt(0).toUpperCase() + dir.slice(1),
+      position: "left" as const,
+    };
+  })
+  .filter(Boolean);
 
 const config: Config = {
   title: "My Books",
@@ -43,7 +50,7 @@ const config: Config = {
 
   i18n: {
     defaultLocale: "en",
-    locales: ["en"],
+    locales: ["en", "id"],
   },
 
   presets: [
@@ -95,17 +102,19 @@ const config: Config = {
     },
     navbar: {
       title: "My Books",
-
       logo: {
         alt: `My Books - Modern documentation`,
         src: "img/logo.svg",
       },
-
       items: [
         ...navbarItems,
         {
           href: "https://github.com/adex-dev/my-books",
           label: "GitHub",
+          position: "right",
+        },
+        {
+          type: "localeDropdown",
           position: "right",
         },
       ],
