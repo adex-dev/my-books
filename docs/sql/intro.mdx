@@ -1,8 +1,12 @@
 ---
+sidebar_position: 1
 title: Intro Sql
 description: Pengenalan dasar SQL untuk memahami database dan query.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Admonition from '@theme/Admonition';
 
 <center>
 <img
@@ -68,6 +72,9 @@ UPDATE users SET name = 'Nudin' WHERE id = 1;
 ```sql
 DELETE FROM users WHERE id = 1;
 ```
+<Admonition type="warning">
+Hati-hati menggunakan DELETE tanpa WHERE. bisa terhapus semua data satu table.
+</Admonition>
 
 ### Struktur Database Relasional
 
