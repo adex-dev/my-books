@@ -26,74 +26,56 @@ export default function HomepageFeatures(): ReactNode {
                 gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
                 gap: "1.5rem",
               }}>
-              <div
+              <Link
+                to="/docs/rust/intro"
                 style={{
                   position: "relative",
                   padding: "2rem",
                   borderRadius: "16px",
                   border: "1px solid #2e8555",
+                  textDecoration: "none",
+                  color: "inherit",
                 }}>
-                <div
+                <img
+                  src="img/rust.png"
+                  alt="logo rust"
                   style={{
+                    width: "15%",
+                    height: "40%",
                     position: "absolute",
-                    width: "100%",
-                    right: "-38%",
-                    bottom: 0,
+                    right: "5px",
+                    bottom: "5px",
                     zIndex: -10,
-                  }}>
-                  <img
-                    src="img/rust.png"
-                    alt="logo rust"
-                    style={{
-                      width: "15%",
-                      height: "20%",
-                    }}
-                  />
-                </div>
-                <Link
-                  to="/docs/rust/intro"
-                  style={{
-                    textDecoration: "none",
-                    color: "inherit",
-                  }}>
-                  <h2>Rust</h2>
-                  <p>Rust programming documentation.</p>
-                </Link>
-              </div>
-              <div
-                style={{
-                  position: "relative",
-                  padding: "2rem",
-                  borderRadius: "16px",
-                  border: "1px solid #2e8555",
-                }}>
-                <div
-                  style={{
-                    position: "absolute",
-                    width: "100%",
-                    right: "-38%",
-                    bottom: 0,
-                    zIndex: -10,
-                  }}>
-                  <img
-                    src="img/sql.svg"
-                    alt="logo sql"
-                    style={{
-                      width: "15%",
-                      height: "20%",
-                    }}
-                  />
-                </div>
+                  }}
+                />
+                <h2>Rust</h2>
+                <p>Rust programming documentation.</p>
+              </Link>
                 <Link
                   to="/docs/sql/intro"
-                   style={{
+                  style={{
                     textDecoration: "none",
                     color: "inherit",
+                     position: "relative",
+                  padding: "2rem",
+                  borderRadius: "16px",
+                  border: "1px solid #2e8555"
                   }}>
+                  <img
+                  src="img/sql.svg"
+                    alt="logo sql"
+                  style={{
+                    width: "15%",
+                    height: "40%",
+                    position: "absolute",
+                    right: "5px",
+                    bottom: "5px",
+                    zIndex: -10,
+                  }}
+                />
                   <h2>Sql</h2>
                   <p>Learning learning modules.</p>
                 </Link>
-              </div>
             </div>
           </div>
         </div>

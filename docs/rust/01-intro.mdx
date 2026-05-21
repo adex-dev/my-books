@@ -1,0 +1,87 @@
+---
+id: intro
+title: Introduction to Rust
+---
+
+<center>
+  <img
+    src={require('/img/rust.png').default}
+    style={{ width: "100px", height: "100px"}}
+    alt="Rust Logo"
+  />
+</center>
+
+Rust is a modern programming language focused on performance, memory safety, and concurrency without using a garbage collector.
+
+Rust is designed for building fast, secure, and stable applications, making it widely used for:
+
+- Backend APIs
+- System programming
+- CLI tools
+- WebAssembly (WASM)
+- Networking services
+- Embedded systems
+- High-performance applications
+
+One of Rust’s main advantages is its ownership system, a mechanism that ensures memory safety at compile time without sacrificing runtime performance.
+
+# Advantages of Rust
+
+- Memory safe without a garbage collector
+- High performance comparable to C/C++
+- Safe concurrency
+- Strong type system
+- Clear error handling
+- Modern ecosystem with Cargo
+
+# Cargo
+
+Rust includes a built-in package manager called Cargo.
+
+Cargo is used for:
+
+- Creating projects
+- Running projects
+- Adding dependencies
+- Building and releasing applications
+
+Example of creating a new project:
+
+```bash id="m0s2af"
+cargo new hello_rust
+````
+
+Running the project:
+
+```bash id="q8u3zn"
+cargo run
+```
+
+# Hello World
+
+```rust id="s7x4ld"
+fn main() {
+    println!("Hello, Rust!");
+}
+```
+
+# Rust for Backend Development
+
+> Rust is becoming increasingly popular for backend development because it can efficiently handle concurrent requests while maintaining high performance.
+
+Some popular backend frameworks in Rust include:
+
+* Axum
+* Actix Web
+* Rocket
+
+In backend projects, Rust is often combined with:
+
+* PostgreSQL
+* Redis
+* Tokio
+* Docker
+* WebSocket
+* JWT Authentication
+
+> Rust is highly suitable for building API services, realtime applications, and microservices that require high performance.

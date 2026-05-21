@@ -1,20 +1,19 @@
 ---
 id: intro
-sidebar_position: 2
-title: Axum
+title: Pendahuluan
 ---
 
-# Intro Axum
+```md id="0l7dwp"
+```
 
-```md id="0l7dwp" ```
-
-# Introduction to Axum
+## Pendauluan Axum
 
 Axum adalah web framework asynchronous untuk Rust yang dibangun di atas ecosystem Tokio dan Hyper.
 
 Axum dirancang untuk membuat REST API dan backend service dengan performa tinggi, type safety kuat, dan arsitektur modular.
 
 Framework ini banyak digunakan untuk:
+
 - REST API
 - Authentication service
 - Realtime service
@@ -40,7 +39,7 @@ axum = "0.8"
 tokio = { version = "1", features = ["full"] }
 ```
 
-## Basic Routing
+## Dasar Routing
 
 Contoh API sederhana menggunakan Axum:
 
@@ -69,7 +68,7 @@ async fn main() {
 }
 ```
 
-### Menjalankan Project
+### Menjalankan Proyek
 
 ```rust
 cargo run
@@ -85,23 +84,24 @@ localhost:3000
 
 Umumnya project Axum dipisahkan menjadi beberapa layer:
 
-```bash
-src/
-├── handlers/
-├── services/
-├── repositories/
-├── models/
-├── routes/
-├── middleware/
-├── utils/
-└── main.rs
+```mermaid
+treeView-beta
+    "src"
+        "handler/"
+        "services/"
+        "repository/"
+        "models/"
+        "routes/"
+        "middleware/"
+        "utils/"
+        "main.rs"
 ```
 
 ## Axum dan Tokio
 
-### Axum menggunakan Tokio sebagai asynchronous runtime.
+### Axum menggunakan Tokio sebagai asynchronous runtime
 
-#### Dengan Tokio, Axum mampu menangani banyak request secara concurrent tanpa membuat thread baru untuk setiap request.
+#### Dengan Tokio, Axum mampu menangani banyak request secara concurrent tanpa membuat thread baru untuk setiap request
 
 Hal ini membuat Axum sangat cocok untuk:
 

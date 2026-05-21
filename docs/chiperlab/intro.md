@@ -1,6 +1,6 @@
 ---
 id: intro
-title: Chiperlab
+title: Intro
 ---
 
 # Intro Chiperlab

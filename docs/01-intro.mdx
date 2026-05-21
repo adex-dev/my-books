@@ -1,19 +1,16 @@
 ---
 id: intro
 title: Introduction
-sidebar_position: 1
 ---
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <center>
 <img
-  src={useBaseUrl('/img/contract.png')}
+  src={require('/img/contract.png').default}
   alt="Ebook Logo"
 />
 </center>
 
-# My Books Documentation
+## My Books Documentation
 
 This documentation was created as a centralized hub for work notes, learning materials, and references for applications and technologies used in daily activities.
 
@@ -37,14 +34,13 @@ The documentation is organized based on technology categories or work requiremen
 
 Example structure:
 
-```txt
-docs/
-  rust/
-  python/
-  codeigniter/
-  linux/
-  docker/
-  server/
+```mermaid
+treeView-beta
+    "docs"
+        "rust"
+        "python"
+        "linux"
+        "etc"
 ```
 
 Each folder represents a specific module or topic.
@@ -117,4 +113,4 @@ All documentation is stored in a Git repository so that changes can be tracked a
 
 ## Closing
 
-Good documentation helps maintain work consistency, speeds up troubleshooting, and simplifies learning and project maintenance processes in the future.
+Good documentation helps maintain work consistency, speeds up troubleshooting, and simplifies learning and project maintenance processes in the future, and documentation build with technologies [Docusaurus](https://docusaurus.io/)

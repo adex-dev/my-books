@@ -1,12 +1,11 @@
 ---
 id: string_to_agregration
-sidebar_position: 2
 title: String Aggregation
 ---
 
-> Digunakan untuk menggabungkan banyak row menjadi satu string.
+> Used to combine multiple rows into a single string.
 
-## contoh
+# Example
 
 | item | transaction |
 | ---- | ----------- |
@@ -14,7 +13,7 @@ title: String Aggregation
 | 1    | 1001        |
 | 2    | 1002        |
 
-### Query
+## Query
 
 ```sql
 SELECT
@@ -24,16 +23,36 @@ FROM transaction_line tl
 JOIN transactions t
     ON t.id = tl.transaction
 GROUP BY tl.vendor_id;
-```
+````
 
-### Result
+## Result
 
 | vendor_id | lpb              |
 | --------- | ---------------- |
 | 1         | LPB-001; LPB-002 |
 | 2         | LPB-010; LPB-011 |
 
-## istilah lain pada sql
+# Aggregation Flow
+
+```mermaid id="u2x9lm"
+flowchart TD
+
+A[transaction_line] --> B[GROUP BY vendor_id]
+B --> C[Sort by item]
+C --> D[Combine transaction using STRING_AGG]
+D --> E["LPB-001; LPB-002"]
+```
+
+# Explanation
+
+The query works by:
+
+1. Joining `transaction_line` with `transactions`
+2. Grouping data by `vendor_id`
+3. Sorting rows using `ORDER BY tl.item`
+4. Combining all transaction IDs into one string using `STRING_AGG`
+
+# SQL Equivalent Functions
 
 | Database   | Function         |
 | ---------- | ---------------- |

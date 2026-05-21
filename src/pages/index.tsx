@@ -1,11 +1,12 @@
 import type {ReactNode} from 'react';
+import {useEffect} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
-
+import { useLocation } from '@docusaurus/router';
 import styles from './index.module.css';
 
 function HomepageHeader() {
@@ -35,6 +36,24 @@ function HomepageHeader() {
 
 export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
+   const location = useLocation();
+
+  useEffect(() => {
+    const navbar = document.querySelector('.navbar');
+
+    if (!navbar) return;
+
+    if (location.pathname === '/my-books/') {
+      navbar.classList.add(styles.hideNavbar);
+    } else {
+      navbar.classList.remove(styles.hideNavbar);
+    }
+
+    return () => {
+      navbar.classList.remove(styles.hideNavbar);
+    };
+  }, [location.pathname]);
+
   return (
     <Layout
       title={`${siteConfig.title}`}

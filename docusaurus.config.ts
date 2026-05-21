@@ -1,7 +1,7 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
-
+import matter from "gray-matter";
 import fs from "fs";
 import path from "path";
 
@@ -22,7 +22,7 @@ const navbarItems = folders
 
     if (files.length === 0) return null;
 
-    const firstDoc = files[0].replace(/\.(md|mdx)$/, "");
+    const firstDoc = files[0].replace(/^\d+-/, "").replace(/\.(md|mdx)$/, "");
 
     return {
       to: `/docs/${dir}/${firstDoc}`,
@@ -37,6 +37,9 @@ const config: Config = {
   tagline: "Modern documentation",
   favicon: "img/logo.svg",
 
+  markdown: {
+    mermaid: true,
+  },
   future: {
     v4: true,
   },
@@ -63,11 +66,10 @@ const config: Config = {
           routeBasePath: "docs",
 
           sidebarPath: "./sidebars.ts",
+          numberPrefixParser: true,
         },
 
-        blog: {
-          showReadingTime: true,
-        },
+        blog: false,
 
         theme: {
           customCss: "./src/css/custom.css",
@@ -75,8 +77,8 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-
   plugins: [],
+  themes: ["@docusaurus/theme-mermaid"],
   headTags: [
     {
       tagName: "meta",
@@ -100,21 +102,30 @@ const config: Config = {
       disableSwitch: false,
       respectPrefersColorScheme: false,
     },
+    mermaid: {
+      theme: { light: "neutral", dark: "forest" },
+      options: {
+        securityLevel: "loose",
+        treeView: {
+          rowIndent: 20,
+        },
+      },
+    },
     navbar: {
       title: "My Books",
       logo: {
-        alt: `My Books - Modern documentation`,
+        alt: ` Modern documentation`,
         src: "img/logo.svg",
       },
       items: [
         ...navbarItems,
         {
-          href: "https://github.com/adex-dev/my-books",
-          label: "GitHub",
+          type: "localeDropdown",
           position: "right",
         },
         {
-          type: "localeDropdown",
+          href: "https://github.com/adex-dev/my-books",
+          label: "GitHub",
           position: "right",
         },
       ],

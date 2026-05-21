@@ -1,22 +1,18 @@
-
 ---
-sidebar_position: 1
 id: intro
-title: Intro Sql
+title: Pendahuluan SQL
 description: Pengenalan dasar SQL untuk memahami database dan query.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import Admonition from '@theme/Admonition';
+import Admonition from "@theme/Admonition";
 
 <center>
-<img
-   src={useBaseUrl('/img/sql.svg')}
-  alt="Rust Logo"
-  style={{ width: '100px', height: '100px' }}
-/>
+  <img
+    src={useBaseUrl("/img/sql.svg")}
+    alt="SQL Logo"
+    style={{ width: "100px", height: "100px" }}
+  />
 </center>
 
 
@@ -83,13 +79,24 @@ Hati-hati menggunakan DELETE tanpa WHERE. bisa terhapus semua data satu table.
 
 #### Database relasional terdiri dari beberapa komponen:
 
-Database → Tempat penyimpanan utama
+```mermaid id="r2hk6n"
+flowchart TD
+    A[Database]
+    A --> B[Table]
+    B --> C[Row]
+    B --> D[Column]
+    B --> E[Primary Key]
+    B --> F[Foreign Key]
+```
 
-- Table → Kumpulan data
-- Row → Data per baris
-- Column → Struktur field data
-- Primary Key → Identitas unik data
-- Foreign Key → Relasi antar table
+### komponen
+
+* **Database** → Penyimpanan Utama
+* **Table** → Pengumpulan data
+* **Row** → Satu catatan data
+* **Column** → kolom struktur data
+* **Primary Key** → Unique identifier untuk data
+* **Foreign Key** → Relationship antara tables
 
 ### Kesimpulan
 
