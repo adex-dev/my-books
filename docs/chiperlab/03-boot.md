@@ -1,0 +1,14 @@
+---
+id: boot
+title: Boot
+---
+
+# Boot
+
+Boot adalah metode menjalankan perangkat ke mode download khusus untuk proses flashing firmware dan recovery sistem. Mode ini digunakan ketika perangkat mengalami bootloop, stuck logo, atau gagal masuk sistem normal.
+
+Dengan mode MD, perangkat dapat terhubung ke komputer agar firmware dapat di-install ulang secara langsung ke memori perangkat.
+
+## cara instalasinya
+
+- download terlebih dahulu versi bootnya : download
