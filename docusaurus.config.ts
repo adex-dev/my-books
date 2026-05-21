@@ -34,7 +34,7 @@ const navbarItems = folders
 
 const config: Config = {
   title: "My Books",
-  tagline: "Modern developer documentation",
+  tagline: "Engineering Handbook & Developer Docs",
   favicon: "img/logo.svg",
 
   markdown: {
