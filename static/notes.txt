@@ -14,3 +14,10 @@ function Clock(props) {
   return <h2>It is {date.toLocaleTimeString()}.</h2>;
 }
 ```
+
+
+agar muncul Kusus method pakai ini
+
+sidebar_custom_props:
+  type: post
+  
