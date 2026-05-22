@@ -33,7 +33,7 @@ const navbarItems = folders
   .filter(Boolean);
 
 const config: Config = {
-  title: "My Books",
+  title: "MyBook",
   tagline: "Engineering Handbook & Developer Docs",
   favicon: "img/logo.svg",
 
@@ -47,7 +47,7 @@ const config: Config = {
   url: "https://adex-dev.github.io",
   baseUrl: "/my-books/",
   organizationName: "adex-dev",
-  projectName: "my-books",
+  projectName: "mybook",
 
   onBrokenLinks: "throw",
 
@@ -55,7 +55,7 @@ const config: Config = {
     defaultLocale: "en",
     locales: ["en", "id"],
   },
-
+  
   presets: [
     [
       "classic",
@@ -67,6 +67,7 @@ const config: Config = {
 
           sidebarPath: "./sidebars.ts",
           numberPrefixParser: true,
+          breadcrumbs: true,
         },
 
         blog: false,
@@ -78,7 +79,7 @@ const config: Config = {
     ],
   ],
   plugins: [],
-  themes: ["@docusaurus/theme-mermaid"],
+  themes: ["@docusaurus/theme-mermaid","@docusaurus/theme-live-codeblock"],
   headTags: [
     {
       tagName: "meta",
@@ -112,7 +113,7 @@ const config: Config = {
       },
     },
     navbar: {
-      title: "My Books",
+      title: "MyBook",
       logo: {
         alt: ` Modern documentation`,
         src: "img/logo.svg",
@@ -135,10 +136,6 @@ const config: Config = {
       links: [],
       copyright: `${new Date().getFullYear()} | Maintained by Akmad Nudin`,
     },
-    // prism: {
-    //   theme: lightCodeTheme,
-    //   darkTheme: darkCodeTheme,
-    // },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
@@ -151,6 +148,11 @@ const config: Config = {
         "log",
         "hcl",
       ],
+    },
+     docs: {
+      sidebar: {
+        hideable: true,
+      },
     },
   } satisfies Preset.ThemeConfig,
 };
