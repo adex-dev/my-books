@@ -89,3 +89,10 @@
 .api-delete {
   background: #f93e3e;
 }
+.icon-label{
+  stroke: #18a9f2 !important;
+}
+
+.navbar__item {
+  text-transform: capitalize !important;
+}
